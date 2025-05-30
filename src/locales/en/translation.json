@@ -38,6 +38,10 @@
     "description1": "Check out our gallery to see before and after photos of our work.",
     "description2": "You’ll see how gravestones are restored to their original beauty."
   },
+  "gallery": {
+  "title": "See the Difference",
+  "description": "Explore our gallery to view before-and-after photos of our work. You'll see how gravestones are restored to their original beauty."
+},
 "testimonials": {
   "title": "What Our Clients Say",
   "list": [
