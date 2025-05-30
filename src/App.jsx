@@ -6,6 +6,7 @@ import ServicesIntro from './components/main/ServicesIntro';
 import ServiceBlock from './components/cards/ServiceBlock';
 import ServiceBlock2 from './components/cards/ServiceBlock2';
 import ProcessBlock from './components/process/ProcessBlock';
+import GalleryIntro from './components/difference/GalleryIntro';
 import Testimonials from './components/reviews/Testimonials';
 import ContactForm from './components/contact/ContactForm';
 import Footer from './components/Footer';
@@ -23,6 +24,7 @@ export default function App() {
       <ServiceBlock />
       <ServiceBlock2 />
       <ProcessBlock />
+      <GalleryIntro />
       <Testimonials />
       <ContactForm />
       <Footer />

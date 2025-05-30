@@ -9,7 +9,7 @@
   },
   "hero": {
   "title": "Preserve the Memory",
-  "description": "We specialize in restoring gravestones, bringing back their original beauty and honoring the memory of those laid to rest. Our team provides careful cleaning services to preserve the memory of your loved ones.",
+  "description": "Luysar provides professional cemetery cleaning services, grave care, and monument cleaning in Yerevan and throughout Armenia. We help preserve the memory of your loved ones by offering high-quality headstone cleaning, removing dirt, moss, and buildup using gentle methods.",
   "button": "Learn More"
 },
 "servicesIntro": {
@@ -32,6 +32,12 @@
   "step2": "We inspect the memorial on site and select appropriate cleaning solutions.",
   "step3": "We perform the cleaning, remove dirt, and restore the appearance of the monument."
 },
+
+"galleryIntro": {
+    "title": "See the Difference",
+    "description1": "Check out our gallery to see before and after photos of our work.",
+    "description2": "You’ll see how gravestones are restored to their original beauty."
+  },
 "testimonials": {
   "title": "What Our Clients Say",
   "list": [
@@ -64,7 +70,7 @@
 "contact": {
   "title": "Get in Touch",
   "description": "Leave a request and we will contact you promptly to discuss your order.",
-  "address": "Yerevan, Tigran Mets Ave, 15",
+  "address": "Yerevan,  Verin Antarain 174/2",
   "email": "Your email address",
   "name": "Your full name",
   "message": "Your message",
