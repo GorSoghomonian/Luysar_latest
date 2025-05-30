@@ -1,0 +1,76 @@
+{
+  "menu": {
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "reviews": "Reviews",
+    "pricing": "Pricing",
+    "gallery": "Gallery"
+  },
+  "hero": {
+  "title": "Preserve the Memory",
+  "description": "We specialize in restoring gravestones, bringing back their original beauty and honoring the memory of those laid to rest. Our team provides careful cleaning services to preserve the memory of your loved ones.",
+  "button": "Learn More"
+},
+"servicesIntro": {
+  "title": "Services Tailored for You",
+  "description": "We offer gravestone cleaning services using specialized techniques to remove dirt and moss, ensuring a respectful process."
+},"serviceBlock": {
+  "title": "Gentle Gravestone Cleaning",
+  "description": "Careful cleaning of the monument surface using mild detergents and low-pressure water.",
+  "imageAlt": "Gravestone Cleaning"
+},
+"serviceBlock2": {
+  "title": "Deep Cleaning with Specialized Products",
+  "description": "Use of specialized chemical compounds to remove persistent dirt and residue from the stone surface.",
+  "imageAlt": "Deep Cleaning"
+},
+"process": {
+  "title": "Simple Process",
+  "description": "We ensure transparent communication at every stage of the project to understand your needs and deliver satisfying results.",
+  "step1": "We provide a consultation, determine the scope of work, and agree on a visit date.",
+  "step2": "We inspect the memorial on site and select appropriate cleaning solutions.",
+  "step3": "We perform the cleaning, remove dirt, and restore the appearance of the monument."
+},
+"testimonials": {
+  "title": "What Our Clients Say",
+  "list": [
+    {
+      "name": "Aram Petrosyan",
+      "city": "Client from Yerevan",
+      "text": "Very pleased with the quality of work. The team was respectful and professional, and the monument looks like new.",
+      "avatar": "/aram.jpg"
+    },
+    {
+      "name": "Anna Grigoryan",
+      "city": "Client from Armavir",
+      "text": "Highly recommend this service! The work was done quickly and with great attention to detail.",
+      "avatar": "/anna.jpg"
+    },
+    {
+      "name": "Gagik Sargsyan",
+      "city": "Client from Gyumri",
+      "text": "Thank you for the care and attention to the memory of our loved ones. The result is top quality.",
+      "avatar": "/gagik.jpg"
+    },
+    {
+      "name": "Naira Hakobyan",
+      "city": "Client from Etchmiadzin",
+      "text": "Very happy with the service. The staff was kind and attentive, and the outcome exceeded expectations.",
+      "avatar": "/naira.jpg"
+    }
+  ]
+},
+"contact": {
+  "title": "Get in Touch",
+  "description": "Leave a request and we will contact you promptly to discuss your order.",
+  "address": "Yerevan, Tigran Mets Ave, 15",
+  "email": "Your email address",
+  "name": "Your full name",
+  "message": "Your message",
+  "submit": "Send Message"
+},
+"footer": {
+  "rights": "All rights reserved"
+}
+}
