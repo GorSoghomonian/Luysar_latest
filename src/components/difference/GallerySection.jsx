@@ -6,13 +6,6 @@ export default function GallerySection() {
 
   return (
     <section className="py-24 px-4 text-center font-sans" id="gallery">
-      <h2 className="text-3xl md:text-4xl font-bold mb-6">
-        {t('gallery.title')}
-      </h2>
-      <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
-        {t('gallery.description')}
-      </p>
-
       <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
         <img
           src="/gallery1.jpg"
