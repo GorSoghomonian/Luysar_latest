@@ -10,6 +10,7 @@ import GalleryIntro from './components/difference/GalleryIntro';
 import Testimonials from './components/reviews/Testimonials';
 import ContactForm from './components/contact/ContactForm';
 import Footer from './components/Footer';
+import GallerySection from './components/difference/GallerySection';
 
 
 
@@ -25,6 +26,7 @@ export default function App() {
       <ServiceBlock2 />
       <ProcessBlock />
       <GalleryIntro />
+      <GallerySection />
       <Testimonials />
       <ContactForm />
       <Footer />
