@@ -17,10 +17,11 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <div key={i} className="flex items-start gap-6 p-5">
               <img
-                src={t.avatar}
-                alt={t.name}
-                className="w-18 h-24 rounded-full object-cover mt-1"
-              />
+  src={t.avatar}
+  alt={t.name}
+  className="w-[72px] h-[72px] rounded-full object-cover mt-1"
+/>
+
               <div style={{ lineHeight: '1.5rem', letterSpacing: '0.015em' }}>
                 <p className="text-gray-800 mb-3">{t.text}</p>
                 <p className="font-bold">{t.name}</p>

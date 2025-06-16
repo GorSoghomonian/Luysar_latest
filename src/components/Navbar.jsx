@@ -1,57 +1,72 @@
 import React, { useState } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { useTranslation } from 'react-i18next';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const scrollTo = (id) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false); // Закрываем мобильное меню
+      setIsMenuOpen(false);
     }
   };
+
+  const handleScrollOrNavigate = (id) => {
+    if (location.pathname === '/') {
+      scrollTo(id);
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        scrollTo(id);
+      }, 100);
+    }
+  };
+
+  const menuItem = (label, id) => (
+    <button
+      onClick={() => handleScrollOrNavigate(id)}
+      className="text-black font-bold hover:text-gray-600"
+    >
+      {label}
+    </button>
+  );
 
   return (
     <nav className="relative w-full border-b border-gray-300 mt-8 font-sans">
       <div className="w-full px-4 py-4 flex items-center justify-between md:grid md:grid-cols-3">
         {/* Левая часть */}
         <div className="hidden md:flex justify-start pl-8 space-x-10">
-          <button onClick={() => scrollTo('services')} className="text-black font-bold hover:text-gray-600">
+          <Link to="/services" className="text-black font-bold hover:text-gray-600">
             {t('menu.services')}
-          </button>
-          <button onClick={() => scrollTo('about')} className="text-black font-bold hover:text-gray-600">
-            {t('menu.about')}
-          </button>
-          <button onClick={() => scrollTo('contact')} className="text-black font-bold hover:text-gray-600">
-            {t('menu.contact')}
-          </button>
+          </Link>
+          {menuItem(t('menu.about'), 'about')}
+          {menuItem(t('menu.contact'), 'contact')}
         </div>
 
         {/* Центр — логотип */}
         <div className="flex justify-center relative z-20">
-          <div className="relative -mb-[32px] md:-mb-[52px] bg-white px-4">
+          <Link to="/" className="relative -mb-[32px] md:-mb-[52px] bg-white px-4">
             <img
               src="/logo-clean.png"
               alt="LUYSAR"
               className="w-24 md:w-32 h-auto object-contain"
             />
-          </div>
+          </Link>
         </div>
 
         {/* Правая часть */}
         <div className="hidden md:flex justify-end pr-8 space-x-6 items-center">
-          <button onClick={() => scrollTo('reviews')} className="text-black font-bold hover:text-gray-600">
-            {t('menu.reviews')}
-          </button>
-          <button onClick={() => scrollTo('services')} className="text-black font-bold hover:text-gray-600">
+          {menuItem(t('menu.reviews'), 'reviews')}
+          <Link to="/services" className="text-black font-bold hover:text-gray-600">
             {t('menu.pricing')}
-          </button>
-          <button onClick={() => scrollTo('gallery')} className="text-black font-bold hover:text-gray-600">
-            {t('menu.gallery')}
-          </button>
+          </Link>
+          {menuItem(t('menu.gallery'), 'gallery')}
 
           {/* Языки */}
           <div className="ml-4 flex gap-2">
@@ -61,7 +76,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Мобильная кнопка меню */}
+        {/* Мобильная кнопка */}
         <div className="md:hidden z-30">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-black text-3xl focus:outline-none">
             {isMenuOpen ? <HiX /> : <HiMenu />}
@@ -72,24 +87,17 @@ export default function Navbar() {
       {/* Мобильное меню */}
       {isMenuOpen && (
         <div className="md:hidden px-6 pb-4 pt-9 space-y-4 bg-white z-10">
-          <button onClick={() => scrollTo('services')} className="block text-black font-bold">
+          <Link to="/services" className="block text-black font-bold" onClick={() => setIsMenuOpen(false)}>
             {t('menu.services')}
-          </button>
-          <button onClick={() => scrollTo('about')} className="block text-black font-bold">
-            {t('menu.about')}
-          </button>
-          <button onClick={() => scrollTo('contact')} className="block text-black font-bold">
-            {t('menu.contact')}
-          </button>
-          <button onClick={() => scrollTo('reviews')} className="block text-black font-bold">
-            {t('menu.reviews')}
-          </button>
-          <button onClick={() => scrollTo('services')} className="block text-black font-bold">
+          </Link>
+          {menuItem(t('menu.about'), 'about')}
+          {menuItem(t('menu.contact'), 'contact')}
+          {menuItem(t('menu.reviews'), 'reviews')}
+          <Link to="/services" className="block text-black font-bold" onClick={() => setIsMenuOpen(false)}>
             {t('menu.pricing')}
-          </button>
-          <button onClick={() => scrollTo('gallery')} className="block text-black font-bold">
-            {t('menu.gallery')}
-          </button>
+          </Link>
+          {menuItem(t('menu.gallery'), 'gallery')}
+
           <div className="pt-4 flex gap-3">
             <button onClick={() => i18n.changeLanguage('hy')} className="text-lg">🇦🇲</button>
             <button onClick={() => i18n.changeLanguage('ru')} className="text-lg">🇷🇺</button>
