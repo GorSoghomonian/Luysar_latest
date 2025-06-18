@@ -42,7 +42,7 @@ export default function Services() {
     {
       title: 'Розы 20 шт',
       description: '20 роз будут возложены к памятнику. Символ памяти и любви.',
-      price: '59.99',
+      price: '79.99',
       image: '/rose.jpg',
     },
     {
