@@ -82,5 +82,74 @@
 },
 "footer": {
   "rights": "All rights reserved"
-}
+},
+"services": {
+    "title": "Our Services",
+    "metaTitle": "Grave Care Services | LUYSAR",
+    "metaDescription": "Grave maintenance, flower delivery, decorative gravel, wreaths and other services from LUYSAR.",
+    "added": "Item added to cart",
+    "items": [
+      {
+        "title": "First Visit",
+        "description": "One-time visit to the grave: cleaning debris, washing the monument, and photo report.",
+        "price": "59.99",
+        "image": "/gallery2.jpg"
+      },
+      {
+        "title": "Annual Grave Care",
+        "description": "4 visits per year with full maintenance and cleanliness support.",
+        "price": "159.99",
+        "image": "/gallery2.jpg"
+      },
+      {
+        "title": "Marble Decorative Gravel",
+        "description": "Laying marble gravel, cleaning the territory, decorative arrangement.",
+        "price": "499.99",
+        "image": "/kroshka.jpeg"
+      },
+      {
+        "title": "100 Carnations",
+        "description": "100 carnations will be respectfully laid at the grave.",
+        "price": "149.99",
+        "image": "/flowers.webp"
+      },
+      {
+        "title": "20 Carnations",
+        "description": "20 white carnations — a simple but beautiful way to remember a loved one.",
+        "price": "49.99",
+        "image": "/flowers.webp"
+      },
+      {
+        "title": "Funeral Wreaths in Yerevan",
+        "description": "Elegant wreaths with flowers and ribbons. Fast delivery in the city.",
+        "price": "125.99",
+        "image": "/venok.webp"
+      },
+      {
+        "title": "20 Roses",
+        "description": "20 roses placed at the grave. A symbol of memory and love.",
+        "price": "79.99",
+        "image": "/rose.jpg"
+      },
+      {
+        "title": "100 Roses",
+        "description": "100 roses placed at the grave. A symbol of memory and love.",
+        "price": "199.99",
+        "image": "/rose.jpg"
+      }
+      
+    ]
+  },
+  "cart": {
+    "add": "Add to cart",
+    "title": "Your Cart",
+    "empty": "Cart is empty",
+    "emptyDescription": "Your cart is empty. Please go to the services page and place your order.",
+    "description": "Review and confirm your selected grave care services. Transparent pricing and simple checkout.",
+    "total": "Total",
+    "checkout": "Place order via WhatsApp",
+    "remove": "Remove",
+    "backToServices": "Back to services",
+    "whatsappMessage": "Hello! I would like to place an order:"
+  }
 }

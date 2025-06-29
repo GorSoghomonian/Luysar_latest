@@ -2,100 +2,52 @@ import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { Helmet } from 'react-helmet';
 import { useCart } from '../context/CartContext';
-import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function Services() {
   const { addToCart } = useCart();
-  const navigate = useNavigate();
+  const { t } = useTranslation();
   const [showNotification, setShowNotification] = useState(false);
 
-  const handleAddToCart = (item) => {
-    addToCart(item);
+  const handleAddToCart = (key, card) => {
+    addToCart({
+      key,
+      price: card.price,
+      image: card.image,
+    });
     setShowNotification(true);
     setTimeout(() => setShowNotification(false), 2000);
   };
 
-  const cards = [
-    {
-      title: 'Первый визит',
-      description: 'Один визит на место захоронения: уборка мусора, мытьё памятника и фотоотчёт.',
-      price: '59.99',
-      image: '/gallery2.jpg',
-    },
-    {
-      title: 'Год ухода за могилой',
-      description: '4 визита в год с полным обслуживанием и поддержкой чистоты.',
-      price: '159.99',
-      image: '/gallery2.jpg',
-    },
-    {
-      title: 'Мраморная Декоративная Крошка',
-      description: 'Укладка мраморной крошки, уборка территории, декоративное оформление.',
-      price: '499.00',
-      image: '/kroshka.jpeg',
-    },
-    {
-      title: 'Гвоздики 100 шт',
-      description: '100 гвоздик будут возложены к могиле с уважением и заботой.',
-      price: '149.99',
-      image: '/flowers.webp',
-    },
-    {
-      title: 'Гвоздики 20 шт',
-      description: '20 белых гвоздик — простой, но красивый способ вспомнить о любимых.',
-      price: '49.99',
-      image: '/flowers.webp',
-    },
-    {
-      title: 'Похоронные венки с доставкой в Ереване',
-      description: 'Элегантные венки с цветами и лентами. Быстрая доставка по городу.',
-      price: '125.99',
-      image: '/venok.webp',
-    },
-    {
-      title: 'Розы 20 шт',
-      description: '20 роз возложены к памятнику. Символ памяти и любви.',
-      price: '79.99',
-      image: '/rose.jpg',
-    },
-    {
-      title: 'Розы 100 шт',
-      description: '100 роз возложены к памятнику. Символ памяти и любви.',
-      price: '199.99',
-      image: '/rose.jpg',
-    },
-  ];
+  const items = t('services.items', { returnObjects: true });
 
   return (
     <div className="py-16 px-6 max-w-7xl mx-auto font-sans relative">
       <Helmet>
-        <title>Услуги по уходу за могилами | LUYSAR</title>
-        <meta
-          name="description"
-          content="Уход за могилами, доставка цветов, декоративная крошка, венки и другие услуги от LUYSAR."
-        />
+        <title>{t('services.metaTitle')}</title>
+        <meta name="description" content={t('services.metaDescription')} />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'WebPage',
-            'name': 'Услуги LUYSAR',
-            'description': 'Закажите профессиональные услуги по уходу за могилами и цветочные композиции с доставкой.',
+            'name': t('services.metaTitle'),
+            'description': t('services.metaDescription'),
           })}
         </script>
       </Helmet>
 
-      {/* Уведомление */}
       {showNotification && (
-        <div className="fixed top-5 right-5 bg-green-600 text-white py-2 px-4 rounded shadow-md z-50 animate-fade-in-out">
-          Товар добавлен в корзину
+        <div className="fixed top-5 right-5 bg-green-600 text-white py-2 px-4 rounded shadow-md z-50">
+          {t('services.added')}
         </div>
       )}
 
-      <h1 className="text-3xl md:text-4xl font-bold mb-10">Наши предложения</h1>
+      <h1 className="text-3xl md:text-4xl font-bold mb-10">{t('services.title')}</h1>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {cards.map((card, index) => (
+        {Object.entries(items).map(([key, card]) => (
           <div
-            key={index}
+            key={key}
             className="flex flex-col h-full border rounded-md shadow-md overflow-hidden bg-white transition-transform hover:scale-[1.02]"
           >
             <img src={card.image} alt={card.title} className="w-full h-80 object-cover" />
@@ -115,10 +67,10 @@ export default function Services() {
                 </p>
               </div>
               <button
-                onClick={() => handleAddToCart(card)}
+                onClick={() => handleAddToCart(key, card)}
                 className="w-full py-2 bg-gray-700 text-white font-semibold rounded hover:bg-gray-800 transition mt-auto"
               >
-                Добавить в корзину
+                {t('cart.add')}
               </button>
             </div>
           </div>
