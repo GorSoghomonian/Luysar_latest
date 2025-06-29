@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
+import { FaShoppingCart } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
+  const { cart } = useCart();
+  const cartItemCount = cart.length;
 
   const scrollTo = (id) => {
     const section = document.getElementById(id);
@@ -68,6 +72,16 @@ export default function Navbar() {
           </Link>
           {menuItem(t('menu.gallery'), 'gallery')}
 
+          {/* Корзина */}
+          <Link to="/cart" className="relative">
+            <FaShoppingCart className="text-2xl text-black hover:text-gray-600" />
+            {cartItemCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                {cartItemCount}
+              </span>
+            )}
+          </Link>
+
           {/* Языки */}
           <div className="ml-4 flex gap-2">
             <button onClick={() => i18n.changeLanguage('hy')} className="text-lg">🇦🇲</button>
@@ -98,6 +112,13 @@ export default function Navbar() {
           </Link>
           {menuItem(t('menu.gallery'), 'gallery')}
 
+          {/* Корзина в мобильном меню */}
+          <Link to="/cart" className="flex items-center gap-2 text-black font-bold" onClick={() => setIsMenuOpen(false)}>
+            <FaShoppingCart />
+            {cartItemCount > 0 && <span>({cartItemCount})</span>}
+          </Link>
+
+          {/* Языки */}
           <div className="pt-4 flex gap-3">
             <button onClick={() => i18n.changeLanguage('hy')} className="text-lg">🇦🇲</button>
             <button onClick={() => i18n.changeLanguage('ru')} className="text-lg">🇷🇺</button>

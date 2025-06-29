@@ -1,12 +1,13 @@
+// src/App.jsx
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ServicesPage from './routes/Services';
+import CartPage from './routes/CartPage';
 
-
-// Компоненты главной страницы
+// Главная страница
 import HeroSection from './components/main/HeroSection';
 import MemorialImage from './components/main/MemorialImage';
 import ServicesIntro from './components/main/ServicesIntro';
@@ -24,10 +25,11 @@ export default function App() {
     <div className="bg-white min-h-screen">
       <Helmet>
         <title>Уборка кладбищ и уход за могилами в Армении — Luysar</title>
-        <meta name="description" content="Профессиональные услуги по уборке кладбищ..." />
-        <meta name="keywords" content="уборка кладбищ, Luysar, Армения" />
+        <meta name="description" content="Профессиональные услуги по уборке кладбищ, уходу за памятниками и доставке цветов в Армении. Уход за могилами с уважением." />
+        <meta name="keywords" content="уборка кладбищ, Luysar, уход за могилами, памятники, Армения" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Luysar — уход за могилами" />
+        <meta property="og:title" content="Luysar — уход за могилами в Армении" />
+        <meta property="og:description" content="Услуги по уборке и уходу за могилами в Армении. Фотоотчет. Цветы. Памятники." />
         <meta property="og:url" content="https://luysar.com" />
         <meta property="og:type" content="website" />
         <html lang="ru" />
@@ -55,6 +57,7 @@ export default function App() {
         />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
 
       <Footer />
