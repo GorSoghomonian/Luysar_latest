@@ -100,32 +100,65 @@ export default function Navbar() {
 
       {/* Мобильное меню */}
       {isMenuOpen && (
-        <div className="md:hidden px-6 pb-4 pt-9 space-y-4 bg-white z-10">
-          <Link to="/services" className="block text-black font-bold" onClick={() => setIsMenuOpen(false)}>
-            {t('menu.services')}
-          </Link>
-          {menuItem(t('menu.about'), 'about')}
-          {menuItem(t('menu.contact'), 'contact')}
-          {menuItem(t('menu.reviews'), 'reviews')}
-          <Link to="/services" className="block text-black font-bold" onClick={() => setIsMenuOpen(false)}>
-            {t('menu.pricing')}
-          </Link>
-          {menuItem(t('menu.gallery'), 'gallery')}
+  <div className="md:hidden px-6 pb-4 pt-9 space-y-4 bg-white z-10">
+    <Link
+      to="/services"
+      className="block text-black font-bold w-full text-left"
+      onClick={() => setIsMenuOpen(false)}
+    >
+      {t('menu.services')}
+    </Link>
+    <button
+      onClick={() => handleScrollOrNavigate('about')}
+      className="block text-black font-bold w-full text-left"
+    >
+      {t('menu.about')}
+    </button>
+    <button
+      onClick={() => handleScrollOrNavigate('contact')}
+      className="block text-black font-bold w-full text-left"
+    >
+      {t('menu.contact')}
+    </button>
+    <button
+      onClick={() => handleScrollOrNavigate('reviews')}
+      className="block text-black font-bold w-full text-left"
+    >
+      {t('menu.reviews')}
+    </button>
+    <Link
+      to="/services"
+      className="block text-black font-bold w-full text-left"
+      onClick={() => setIsMenuOpen(false)}
+    >
+      {t('menu.pricing')}
+    </Link>
+    <button
+      onClick={() => handleScrollOrNavigate('gallery')}
+      className="block text-black font-bold w-full text-left"
+    >
+      {t('menu.gallery')}
+    </button>
 
-          {/* Корзина в мобильном меню */}
-          <Link to="/cart" className="flex items-center gap-2 text-black font-bold" onClick={() => setIsMenuOpen(false)}>
-            <FaShoppingCart />
-            {cartItemCount > 0 && <span>({cartItemCount})</span>}
-          </Link>
+    {/* Корзина */}
+    <Link
+      to="/cart"
+      className="flex items-center gap-2 text-black font-bold"
+      onClick={() => setIsMenuOpen(false)}
+    >
+      <FaShoppingCart />
+      {cartItemCount > 0 && <span>({cartItemCount})</span>}
+    </Link>
 
-          {/* Языки */}
-          <div className="pt-4 flex gap-3">
-            <button onClick={() => i18n.changeLanguage('hy')} className="text-lg">🇦🇲</button>
-            <button onClick={() => i18n.changeLanguage('ru')} className="text-lg">🇷🇺</button>
-            <button onClick={() => i18n.changeLanguage('en')} className="text-lg">🇬🇧</button>
-          </div>
-        </div>
-      )}
+    {/* Языки */}
+    <div className="pt-4 flex gap-3">
+      <button onClick={() => i18n.changeLanguage('hy')} className="text-lg">🇦🇲</button>
+      <button onClick={() => i18n.changeLanguage('ru')} className="text-lg">🇷🇺</button>
+      <button onClick={() => i18n.changeLanguage('en')} className="text-lg">🇬🇧</button>
+    </div>
+  </div>
+)}
+
     </nav>
   );
 }
