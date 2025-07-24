@@ -26,7 +26,7 @@ export default function GallerySection() {
           className="w-full h-[32rem] md:col-span-2 rounded-2xl shadow-md object-cover"
         />
         <img
-          src="/gallery4.jpg"
+          src="/kroshka.jpeg"
           alt="Before and After 4"
           className="w-full h-[32rem] md:col-span-3 rounded-2xl shadow-md object-cover"
         />
