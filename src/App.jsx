@@ -19,6 +19,7 @@ import GallerySection from './components/difference/GallerySection';
 import Testimonials from './components/reviews/Testimonials';
 import ContactForm from './components/contact/ContactForm';
 import PricingPage from './routes/Pricing';
+import About from './routes/About';
 
 export default function App() {
   return (
@@ -26,7 +27,7 @@ export default function App() {
       <Helmet>
         <title>Уборка кладбищ и уход за могилами в Армении — Luysar</title>
         <meta name="description" content="Профессиональные услуги по уборке кладбищ, уходу за памятниками и доставке цветов в Армении. Уход за могилами с уважением." />
-        <meta name="keywords" content="уборка кладбищ, Luysar, уход за могилами, памятники, Армения" />
+        <meta name="keywords" content="уборка кладбищ, Luysar, уход за могилами, памятники, Армения, очистка могил и кладбищ" />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Luysar — уход за могилами в Армении" />
         <meta property="og:description" content="Услуги по уборке и уходу за могилами в Армении. Фотоотчет. Цветы. Памятники." />
@@ -56,6 +57,7 @@ export default function App() {
           }
         />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/about" element={<About />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/cart" element={<CartPage />} />
       </Routes>

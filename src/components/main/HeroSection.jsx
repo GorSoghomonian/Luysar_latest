@@ -1,7 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import PricingPage from '../../routes/Pricing';
-import ServiceBlock2 from '../cards/ServiceBlock2';
 import Services from '../../routes/Services';
 
 export default function HeroSection() {

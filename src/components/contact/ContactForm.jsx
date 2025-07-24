@@ -28,7 +28,7 @@ export default function ContactForm() {
               <a href="https://www.instagram.com/luysar.official/" target="_blank" rel="noopener noreferrer">
                 <FaInstagram className="text-2xl text-gray-700 hover:text-pink-500" />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/profile.php?id=61575874222202" target="_blank" rel="noopener noreferrer">
                 <FaFacebookF className="text-2xl text-gray-700 hover:text-blue-700" />
               </a>
               <a href="https://wa.me/37433431413" target="_blank" rel="noopener noreferrer">
