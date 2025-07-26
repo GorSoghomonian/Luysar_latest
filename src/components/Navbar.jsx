@@ -47,11 +47,14 @@ export default function Navbar() {
     </button>
   );
 
+  const mobileLinkClass = `block font-bold w-full text-left ${isAboutPage ? 'text-white' : 'text-black'}`;
+  const mobileButtonClass = `text-lg ${isAboutPage ? 'text-white' : 'text-black'}`;
+
   return (
     <nav
       className={`w-full font-sans z-50 ${
         isAboutPage
-          ? 'absolute top-0 left-0 bg-transparent pt-6'  // изменено pt-6 для большего отступа сверху
+          ? 'absolute top-0 left-0 pt-8 bg-transparent'
           : 'relative border-b border-gray-300 mt-8 bg-white'
       }`}
     >
@@ -76,7 +79,7 @@ export default function Navbar() {
             }`}
           >
             <img
-              src="/logo-clean.png"
+              src={isAboutPage ? "/logo-clean-white.png" : "/logo-clean.png"}
               alt="LUYSAR"
               className="w-24 md:w-32 h-auto object-contain transition"
             />
@@ -115,74 +118,69 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Мобильная кнопка */}
-        <div className="md:hidden z-30">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={isAboutPage ? "text-white text-3xl focus:outline-none" : "text-black text-3xl focus:outline-none"}
-          >
-            {isMenuOpen ? <HiX /> : <HiMenu />}
-          </button>
-        </div>
+        <div className="md:hidden z-50 relative w-10 h-10">
+  {!isMenuOpen && (
+    <button
+      onClick={() => setIsMenuOpen(true)}
+      className="absolute inset-0 flex items-center justify-center text-3xl focus:outline-none"
+      aria-label="Open menu"
+    >
+      <HiMenu className={isAboutPage ? 'text-white' : 'text-black'} />
+    </button>
+  )}
+
+  {isMenuOpen && (
+    <button
+      onClick={() => setIsMenuOpen(false)}
+      className="absolute inset-0 flex items-center justify-center text-3xl focus:outline-none"
+      aria-label="Close menu"
+    >
+      <HiX className={isAboutPage ? 'text-white' : 'text-black'} />
+    </button>
+  )}
+</div>
+
       </div>
 
-      {/* Мобильное меню */}
+      {/* Мобильное бургер-меню */}
       {isMenuOpen && (
-        <div className="md:hidden px-6 pb-4 pt-9 space-y-4 bg-white z-10">
-          <Link
-            to="/services"
-            className="block text-black font-bold w-full text-left"
-            onClick={() => setIsMenuOpen(false)}
-          >
+        <div
+          className={`md:hidden px-6 pb-4 pt-9 space-y-4 ${
+            isAboutPage
+              ? 'bg-black bg-opacity-60 backdrop-blur-md text-white mt-8'
+              : 'bg-white text-black'
+          } z-10`}
+        >
+          <Link to="/services" className={mobileLinkClass} onClick={() => setIsMenuOpen(false)}>
             {t('menu.services')}
           </Link>
-          <button
-            onClick={() => handleScrollOrNavigate('about')}
-            className="block text-black font-bold w-full text-left"
-          >
+          <Link to="/about" className={mobileLinkClass} onClick={() => setIsMenuOpen(false)}>
             {t('menu.about')}
-          </button>
-          <button
-            onClick={() => handleScrollOrNavigate('contact')}
-            className="block text-black font-bold w-full text-left"
-          >
+          </Link>
+          <button onClick={() => handleScrollOrNavigate('contact')} className={mobileLinkClass}>
             {t('menu.contact')}
           </button>
-          <button
-            onClick={() => handleScrollOrNavigate('reviews')}
-            className="block text-black font-bold w-full text-left"
-          >
+          <button onClick={() => handleScrollOrNavigate('reviews')} className={mobileLinkClass}>
             {t('menu.reviews')}
           </button>
-          <Link
-            to="/services"
-            className="block text-black font-bold w-full text-left"
-            onClick={() => setIsMenuOpen(false)}
-          >
+          <Link to="/services" className={mobileLinkClass} onClick={() => setIsMenuOpen(false)}>
             {t('menu.pricing')}
           </Link>
-          <button
-            onClick={() => handleScrollOrNavigate('gallery')}
-            className="block text-black font-bold w-full text-left"
-          >
+          <button onClick={() => handleScrollOrNavigate('gallery')} className={mobileLinkClass}>
             {t('menu.gallery')}
           </button>
 
           {/* Корзина */}
-          <Link
-            to="/cart"
-            className="flex items-center gap-2 text-black font-bold"
-            onClick={() => setIsMenuOpen(false)}
-          >
+          <Link to="/cart" className={`flex items-center gap-2 font-bold ${isAboutPage ? 'text-white' : 'text-black'}`} onClick={() => setIsMenuOpen(false)}>
             <FaShoppingCart />
             {cartItemCount > 0 && <span>({cartItemCount})</span>}
           </Link>
 
           {/* Языки */}
           <div className="pt-4 flex gap-3">
-            <button onClick={() => i18n.changeLanguage('hy')} className="text-lg">🇦🇲</button>
-            <button onClick={() => i18n.changeLanguage('ru')} className="text-lg">🇷🇺</button>
-            <button onClick={() => i18n.changeLanguage('en')} className="text-lg">🇬🇧</button>
+            <button onClick={() => i18n.changeLanguage('hy')} className={mobileButtonClass}>🇦🇲</button>
+            <button onClick={() => i18n.changeLanguage('ru')} className={mobileButtonClass}>🇷🇺</button>
+            <button onClick={() => i18n.changeLanguage('en')} className={mobileButtonClass}>🇬🇧</button>
           </div>
         </div>
       )}
