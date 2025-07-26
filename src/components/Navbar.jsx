@@ -51,7 +51,7 @@ export default function Navbar() {
     <nav
       className={`w-full font-sans z-50 ${
         isAboutPage
-          ? 'absolute top-0 left-0 bg-transparent pt-8'  // изменено pt-6 для большего отступа сверху
+          ? 'absolute top-0 left-0 bg-transparent pt-6'  // изменено pt-6 для большего отступа сверху
           : 'relative border-b border-gray-300 mt-8 bg-white'
       }`}
     >
@@ -76,10 +76,10 @@ export default function Navbar() {
             }`}
           >
             <img
-        src={isAboutPage ? "/logo-clean-white.png" : "/logo-clean.png"}
-        alt="LUYSAR"
-        className="w-24 md:w-32 h-auto object-contain transition"
-      />
+              src="/logo-clean.png"
+              alt="LUYSAR"
+              className="w-24 md:w-32 h-auto object-contain transition"
+            />
           </Link>
         </div>
 

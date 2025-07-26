@@ -151,5 +151,20 @@
     "remove": "Remove",
     "backToServices": "Back to services",
     "whatsappMessage": "Hello! I would like to place an order:"
-  }
+  },
+  "about": {
+  "title": "It’s important to remember your loved ones, even from afar…",
+  "paragraph1": "If you live abroad or in another city and want the graves of your loved ones in Armenia to be clean, well-maintained, and tidy — we can help.",
+  "paragraph2": "Luysar is a team that respectfully and carefully takes care of graves, monuments, and cemetery beautification throughout Armenia. For us, it’s not just a job — it’s a way to preserve the memory of dear people and support families, even if they live far away.",
+  "services": {
+    "1": "✅ Professional cleaning of monuments from dirt and residue",
+    "2": "✅ Maintenance and preparation for memorial dates",
+    "3": "✅ Decorating graves with marble chips and flowers (upon request)",
+    "4": "✅ Photo and video reports for clients living abroad"
+  },
+  "paragraph3": "We use safe, eco-friendly methods and treat each memorial site with care — as if it were for our own loved ones.",
+  "paragraph4": "Follow us to learn:\n✅ Tips for grave care\n✅ Special offers\n✅ How to order services for your relatives in Armenia",
+  "footer": "🤍 Luysar — respect for memory, attention to detail."
+}
+
 }
